@@ -8,5 +8,15 @@
 		@returns							A new array
 */
 var splice = function(arr, start, numToReplace, replace) {
-	return [];
+	var i, x = [];
+	for (var i = 0; i < start && i < arr.length; i++) {
+		x.push(arr[i]);
+	}
+	for (var i = 3; i < arguments.length; i++) {
+		x.push(arguments[i]);
+	}
+	for (var i = start+numToReplace; i < arr.length; i++) {
+		x.push(arr[i]);
+	}
+	return x;
 };
